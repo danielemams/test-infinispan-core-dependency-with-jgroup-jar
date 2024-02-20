@@ -24,7 +24,7 @@
                 <artifactId>infinispan-bom</artifactId>
                 <version>${version.infinispan}</version>
                 <type>pom</type>
-                <scope>provided</scope>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -34,7 +34,7 @@
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-core</artifactId>
             <version>${version.infinispan}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
