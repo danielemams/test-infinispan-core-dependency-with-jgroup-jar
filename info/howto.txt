@@ -1,0 +1,32 @@
+1. jar:
+<maven.compiler.source>8</maven.compiler.source>
+<maven.compiler.target>8</maven.compiler.target>
+
+2. $JAVA_HOME e javac devono puntare alla jdk11:
+
+[dmammare@dmammare test-infinispan-core-dependency-with-jgroup-jar]$ javac -version
+javac 11.0.21
+[dmammare@dmammare test-infinispan-core-dependency-with-jgroup-jar]$ echo $JAVA_HOME
+/usr/lib/jvm/jdk-11.0.21
+
+
+3. compili e metti il modulo su jboss eap:
+
+$ mvn clean install
+
+> modulo su EAP:
+- location: jboss/jboss-eap-7.4.15/modules/my/custom/module/main
+- content:
+[dmammare@dmammare main]$ ls
+module.xml  testInfinispanCoreDependencyWithJgroupJar-1.0-SNAPSHOT.jar
+
+
+
+
+4. prima di runnare jboss. rimetti $JAVA_HOME e java che puntano a jvm8
+
+that's all
+
+in questo modo ho:
+
+java.lang.NoSuchMethodError: java.nio.ByteBuffer.clear()Ljava/nio/ByteBuffer;
